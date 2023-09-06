@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/print_results.py
 #                                                                             
-# PROGRAMMER: Daniel Marchena Parreira
-# DATE CREATED: 3/7/2019                                 
-# REVISED DATE: 3/7/2019 
+# PROGRAMMER: Amogh Joshi
+# DATE CREATED:                              
+# REVISED DATE: 
 # PURPOSE: Create a function print_results that prints the results statistics
 #          from the results statistics dictionary (results_stats_dic). It 
 #          should also allow the user to be able to print out cases of misclassified
