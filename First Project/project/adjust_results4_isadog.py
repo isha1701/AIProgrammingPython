@@ -56,7 +56,7 @@ def adjust_results4_isadog(results_dic, dogfile):
                  NEW - index 4 = 1/0 (int)  where 1 = Classifier classifies image 
                             'as-a' dog and 0 = Classifier classifies image  
                             'as-NOT-a' dog.
-     dogfile - A text file that contains names of all dogs from the classifier
+     dogfile - A text file that contains names of all doggies from the classifier
                function and dog names from the pet image files. This file has 
                one dog name per line dog names are all in lowercase with 
                spaces separating the distinct words of the dog name. Dog names
@@ -67,27 +67,27 @@ def adjust_results4_isadog(results_dic, dogfile):
     Returns:
            None - results_dic is mutable data type so no return needed.
     """       
-    dogs = set()
+    doggies = set()
     with open(dogfile) as file:
-        for dog in file:
-            dogs.add(dog.rstrip())
+        for dogg in file:
+            doggies.add(dogg.rstrip())
     
-    for key in results_dic:
-        pet_image_label = results_dic[key][0]
-        classifier_labels = results_dic[key][1]
-        if pet_image_label in dogs:
-            results_dic[key].append(1)
+    for fkey in results_dic:
+        pet_image_label = results_dic[fkey][0]
+        classifier_labels = results_dic[fkey][1]
+        if pet_image_label in doggies:
+            results_dic[fkey].append(1)
         else:
-            results_dic[key].append(0)
+            results_dic[fkey].append(0)
         
-        is_dog = False
+        is_a_dog = False
         for classifier_label in classifier_labels.split(","):
-            if classifier_label.strip() in dogs:
-                is_dog = True
+            if classifier_label.strip() in doggies:
+                is_a_dog = True
                 break
                 
-        if is_dog:
-            results_dic[key].append(1)
+        if is_a_dog:
+            results_dic[fkey].append(1)
         else:
-            results_dic[key].append(0)
+            results_dic[fkey].append(0)
         
